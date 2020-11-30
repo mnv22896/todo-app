@@ -1,0 +1,35 @@
+<body style="background-color:powderblue;">
+<h1 style="color:red;font-size:300%;width=400px;border: 40px solid powderblue;padding: 20px;">TODO APP </h1>
+
+<ol>
+  
+{% for todo_item in all_todo_items %}
+    <li>{{ todo_item.content }} 
+ <form action="/deleteTodo/{{todo_item.id}}/"
+            style="width:30%;display: inline;"
+            method="post">
+{% csrf_token %}
+                
+        <input type="submit" value="Delete" style="padding:2px;width:10%;"/>
+
+      </form>
+  
+  </li>
+  
+{% endfor %}
+
+</ol>
+
+<a href="https://www.w3schools.com/html/html_classes.asp">w3schools</a> 
+<form action="/addTodo/" method="post" padding= "20px">
+{% csrf_token %}
+   
+  <input type="text" name="content" style= "width: 70%;"/>
+    
+  <input type="submit" value="Add"  style= "width: 20%;">
+     
+</form>
+
+{% if k %}
+    <P>Already in the list</P>
+{% endif  %}

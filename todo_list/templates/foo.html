@@ -1,0 +1,20 @@
+<h1> All APPS</h1>
+
+  
+      
+<form action="/todo/"
+            style="width:30%;display: inline;"
+            method="post">
+{% csrf_token %}        
+        <input type="submit" value="todo" style="padding:2px;width:10%;"/>
+
+      </form>
+  
+  <form action="/polls/"
+            style="width:30%;display: inline;"
+            method="post">{% csrf_token %}
+           
+        <input type="submit" value="polls" style="padding:2px;width:10%;"/>
+
+      </form>
+
